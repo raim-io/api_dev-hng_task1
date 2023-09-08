@@ -40,8 +40,8 @@ app.get('/api/zuri', (req, res) => {
 			current_day: currentDay,
 			utc_time: utcTime,
 			track,
-			github_file_url: "github",
-			github_repo_url: "github",
+			github_file_url: "https://github.com/raim-io/api_dev-hng_task1/blob/master/server.js",
+			github_repo_url: "https://github.com/raim-io/api_dev-hng_task1.git",
 			status_code: status,
 		};
 
