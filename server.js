@@ -3,7 +3,7 @@ const moment = require('moment');
 const dotenv = require('dotenv');
 
 dotenv.config();
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 
 // initialize express app
 const app = express();
