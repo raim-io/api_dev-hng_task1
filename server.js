@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 // main api endpoint
-app.get('/api/zuri', (req, res) => {
+app.get('/api/', (req, res) => {
 	const { slack_name, track } = req.query;
 
 	try {
