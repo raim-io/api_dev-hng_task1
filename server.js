@@ -1,7 +1,9 @@
 const express = require('express');
 const moment = require('moment');
+const dotenv = require('dotenv');
 
-const PORT = 8080;
+dotenv.config();
+const PORT = process.env.PORT || 8081;
 
 // initialize express app
 const app = express();
@@ -51,6 +53,5 @@ app.get('/api/zuri', (req, res) => {
 		throw new Error(error.message);
 	}
 });
-
 
 app.listen(PORT, console.log(`server is running on port ${PORT}`));
