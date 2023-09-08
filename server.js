@@ -8,26 +8,25 @@ const PORT = process.env.PORT || 8080;
 // initialize express app
 const app = express();
 
-// define the current date and current time using momentjs
-const date = moment();
-const currentDay = date.format('dddd');
-// the utc time will be in the format "2023-09-08T12:19:14Z"
-const utcTime = date.toISOString().slice(0, -5) + 'Z';
-
-
-//const date = new Date();
-//const currentDay = date.toLocaleDateString('en-US', { weekday: 'long' });
-// the utc time will be in the format "2023-09-08T12:01:42.858Z" 
-//const utcTime = date.toISOString();
-
 // test api server
 app.get('/', (req, res) => {
 	res.send('API is running...');
 });
 
 // main api endpoint
-app.get('/api/', (req, res) => {
+app.get('/api', (req, res) => {
 	const { slack_name, track } = req.query;
+
+	// define the current date and current time using momentjs
+	const date = moment();
+	const currentDay = date.format('dddd');
+	// the utc time will be in the format "2023-09-08T12:19:14Z"
+	const utcTime = date.toISOString().slice(0, -5) + 'Z';
+
+	//const date = new Date();
+	//const currentDay = date.toLocaleDateString('en-US', { weekday: 'long' });
+	//// the utc time will be in the format "2023-09-08T12:01:42.858Z" 
+	//const utcTime = date.toISOString();
 
 	try {
 		if (!slack_name || !track) {
