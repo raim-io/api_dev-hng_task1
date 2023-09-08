@@ -1,12 +1,14 @@
 {
   "dependencies": {
     "express": "^4.18.2",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "nodemon": "^3.0.1"
   },
   "name": "task-1",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

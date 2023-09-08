@@ -6,7 +6,7 @@ const PORT = 8080;
 // initialize express app
 const app = express();
 
-// define the current date and current time
+// define the current date and current time using momentjs
 const date = moment();
 const currentDay = date.format('dddd');
 const utcTime = date.toISOString();
@@ -31,19 +31,23 @@ app.get('/api/zuri', (req, res) => {
 			return res.sendStatus(400);
 		}
 
+		const status = 200;
+
 		const result = {
 			slack_name,
 			current_day: currentDay,
 			utc_time: utcTime,
 			track,
-			"github_file_url": "",
-			"github_repo_url": "",
-			status_code: "200"
+			github_file_url: "github",
+			github_repo_url: "github",
+			status_code: status,
 		};
 
 		res.json(result);
+		res.status(200);
 	} catch (error) {
 		res.status(400);
+		console.log(error);
 		throw new Error(error.message);
 	}
 });
